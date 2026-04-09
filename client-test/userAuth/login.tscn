@@ -1,0 +1,405 @@
+[gd_scene load_steps=10 format=3 uid="uid://c78v6fl4a68gf"]
+
+[ext_resource type="Script" uid="uid://28n6ltponfbt" path="res://userAuth/login.gd" id="1_380l6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1baey"]
+bg_color = Color(0.90093577, 0.9384173, 0.9453284, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_1baey"]
+font_size = 46
+font_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_380l6"]
+bg_color = Color(0.4833398, 0.613378, 0.7585721, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h244m"]
+bg_color = Color(0.31361988, 0.4346023, 0.5690475, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oggnr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h244m"]
+font_size = 36
+font_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_380l6"]
+font_size = 14
+font_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xuipv"]
+font_size = 30
+font_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+
+[node name="auth" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_380l6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7157997, 0.8111391, 0.8893456, 1)
+
+[node name="pages" type="TabContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.065972224
+anchor_top = 0.11419753
+anchor_right = 0.9340278
+anchor_bottom = 0.88580245
+theme_override_styles/panel = SubResource("StyleBoxFlat_1baey")
+current_tab = 0
+clip_tabs = false
+tabs_visible = false
+metadata/_edit_use_anchors_ = true
+
+[node name="SIGNUP" type="VBoxContainer" parent="pages"]
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+metadata/_tab_index = 0
+
+[node name="signin" type="Label" parent="pages/SIGNUP"]
+layout_mode = 2
+text = "SIGN UP"
+label_settings = SubResource("LabelSettings_1baey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="pages/SIGNUP"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="email" type="LineEdit" parent="pages/SIGNUP"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "EMAIL"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="pass" type="LineEdit" parent="pages/SIGNUP"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "PASSWORD"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+secret = true
+
+[node name="conpass" type="LineEdit" parent="pages/SIGNUP"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "CONFIRM PASSWORD"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+secret = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pages/SIGNUP"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="signup" type="Button" parent="pages/SIGNUP/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "SUBMIT"
+
+[node name="logpage" type="Button" parent="pages/SIGNUP/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "LOG IN"
+
+[node name="verify" type="Button" parent="pages/SIGNUP/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "VERIFY"
+
+[node name="CONFIRMSIGNUP" type="VBoxContainer" parent="pages"]
+visible = false
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+metadata/_tab_index = 1
+
+[node name="signin" type="Label" parent="pages/CONFIRMSIGNUP"]
+layout_mode = 2
+text = "CONFIRM SIGN UP"
+label_settings = SubResource("LabelSettings_1baey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="instruct" type="Label" parent="pages/CONFIRMSIGNUP"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_h244m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="pages/CONFIRMSIGNUP"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="confirmation" type="LineEdit" parent="pages/CONFIRMSIGNUP"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "Enter Verification Code Here"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pages/CONFIRMSIGNUP"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="verification" type="Button" parent="pages/CONFIRMSIGNUP/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "SUBMIT"
+
+[node name="back" type="Button" parent="pages/CONFIRMSIGNUP/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "BACK"
+
+[node name="LOGIN" type="VBoxContainer" parent="pages"]
+visible = false
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+metadata/_tab_index = 2
+
+[node name="signin" type="Label" parent="pages/LOGIN"]
+layout_mode = 2
+text = "LOG IN"
+label_settings = SubResource("LabelSettings_1baey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="pages/LOGIN"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="email" type="LineEdit" parent="pages/LOGIN"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "EMAIL"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="pass" type="LineEdit" parent="pages/LOGIN"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "PASSWORD"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+secret = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pages/LOGIN"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="login" type="Button" parent="pages/LOGIN/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "SUBMIT"
+
+[node name="signpage" type="Button" parent="pages/LOGIN/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "SIGN UP PAGE"
+
+[node name="AWAIT" type="VBoxContainer" parent="pages"]
+visible = false
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+alignment = 1
+metadata/_tab_index = 3
+
+[node name="waiting" type="Label" parent="pages/AWAIT"]
+layout_mode = 2
+text = "REQUESTING ACTION..."
+label_settings = SubResource("LabelSettings_1baey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ERROR" type="VBoxContainer" parent="pages"]
+visible = false
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+metadata/_tab_index = 4
+
+[node name="errorsign" type="Label" parent="pages/ERROR"]
+layout_mode = 2
+text = "ERROR OCCURED"
+label_settings = SubResource("LabelSettings_1baey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="pages/ERROR"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="errorcode" type="Label" parent="pages/ERROR"]
+custom_minimum_size = Vector2(850, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ERROR OCCURED"
+label_settings = SubResource("LabelSettings_380l6")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pages/ERROR"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="back" type="Button" parent="pages/ERROR/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h244m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_380l6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oggnr")
+text = "BACK"
+
+[node name="SUCCESS" type="VBoxContainer" parent="pages"]
+visible = false
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+metadata/_tab_index = 5
+
+[node name="logged" type="Label" parent="pages/SUCCESS"]
+layout_mode = 2
+text = "LOGIN SUCCESSFUL"
+label_settings = SubResource("LabelSettings_1baey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="pages/SUCCESS"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="errorcode" type="Label" parent="pages/SUCCESS"]
+custom_minimum_size = Vector2(850, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Your login system works!"
+label_settings = SubResource("LabelSettings_xuipv")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

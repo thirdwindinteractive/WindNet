@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Client Test"
+run/main_scene="uid://c78v6fl4a68gf"
+config/features=PackedStringArray("4.5", "Mobile")
+
+[autoload]
+
+UserGlobal="*res://global/user_global.gd"
+Subscriber="*res://multiplayer/subscriber.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+renderer/rendering_method="mobile"
