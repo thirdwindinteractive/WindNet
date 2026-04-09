@@ -64,4 +64,11 @@ Ignore it. This is a known, harmless warning from Amazon's internal `aws-cdk-lib
 **2. My code editor is covered in red error lines!**
 If you see errors like `Cannot find module 'aws-cdk-lib'`, run `npm install` in your terminal. 
 
-**3. "Environment failed bootstrapping: AWS::
+**3. "Environment failed bootstrapping: AWS::S3::Bucket already exists"**
+Log into the AWS Console, search for **S3**, find the bucket named `cdk-hnb659fds-assets-...`, empty it, and delete it. Run the bootstrap command again.
+
+**4. How do I delete everything and stop AWS charges?**
+Run this command in the backend folder:
+```bash
+npx cdk destroy
+```
